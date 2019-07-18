@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package idaos;
+package icontroller;
 
 import java.util.List;
 import models.Country;
@@ -12,11 +12,16 @@ import models.Country;
  *
  * @author Arif Fridasari
  */
-public interface ICountryDAO {
-    public List<Country> getAll();
-    public Country getById(Short id);
+public interface ICountryController{
+     public List<Country> getAll();
+
+    public Country getById(String id);
+
     public List<Country> search(Object keyword);
-    public boolean insert(Country country);
-    public boolean update(Country country);
-    public boolean delete(Short id);
+
+    public String insert(String id, String country, String lastUpdate);
+
+    public String update(String id, String country, String lastUpdate);
+
+    public String deleteById(String id);
 }

@@ -5,10 +5,13 @@
  */
 package tools;
 
-
 import daos.ActorDAO;
+import daos.CountryDAO;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import models.Actor;
+import models.Country;
 import org.hibernate.SessionFactory;
 
 /**
@@ -24,14 +27,23 @@ public class OHibernate {
         SessionFactory factory = new HibernateUtil().getSessionFactory();
         System.out.println(factory);
         
-        ActorDAO adao = new ActorDAO(factory);
+        //insert
+        CountryDAO cdao = new CountryDAO(factory);
+//        Country country = new Country(new Short ("100"), "Winterfell",new Timestamp(new Date().getTime()));
+//        System.out.println(cdao.insert(country));
+
         
-        List<Actor> actors = adao.getAll();
-        for (Actor data : actors) {
-            System.out.println(data.getActorId() + " " + data.getFirstName()+ " " + data.getLastName());
-        }
+        //getAll
+//        List<Country> countrys = cdao.getAll();
+//        for (Country data : countrys) {
+//            System.out.println(data.getCountryId() + " " + data.getCountry() + " " + data.getLastUpdate());
+//        }
 
-
+        //getByID
+        Country country = cdao.getById(new Short("1"));
+        System.out.println(country.getCountryId() + " - " + country.getCountry() + " - "+ country.getLastUpdate());
+        
+        
     }
-    
+
 }
