@@ -51,5 +51,7 @@ Contributor(s):
         <property name="hibernate.connection.autocommit">true</property>
         <property name="hibernate.enable_lazy_load_no_trans">true</property>
         <mapping class="models.Actor"/>
+        <mapping class="models.City"/>
+        <mapping class="models.Country"/>
     </session-factory>
 </hibernate-configuration>

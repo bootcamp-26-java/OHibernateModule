@@ -17,6 +17,7 @@ import org.hibernate.Transaction;
 /**
  *
  * @author Arif Fridasari
+ * 
  */
 public class CityDAO implements ICityDAO {
 

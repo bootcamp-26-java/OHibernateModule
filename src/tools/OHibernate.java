@@ -5,10 +5,14 @@
  */
 package tools;
 
-
 import daos.ActorDAO;
+import daos.CityDAO;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 import models.Actor;
+import models.City;
+import models.Country;
 import org.hibernate.SessionFactory;
 
 /**
@@ -23,15 +27,39 @@ public class OHibernate {
     public static void main(String[] args) {
         SessionFactory factory = new HibernateUtil().getSessionFactory();
         System.out.println(factory);
-        
-        ActorDAO adao = new ActorDAO(factory);
-        
-        List<Actor> actors = adao.getAll();
-        for (Actor data : actors) {
-            System.out.println(data.getActorId() + " " + data.getFirstName()+ " " + data.getLastName());
-        }
 
+        CityDAO cdao = new CityDAO(factory);
 
+        /**
+         *
+         * Test GetAll
+         *
+         */
+//        List<City> city = cdao.getAll();
+//        for (City data : city) {
+//            System.out.println(data.getCityId() + " " + data.getCity() + " " 
+//                    + data.getCountryId().getCountry()+ " " + data.getLastUpdate());
+//        }
+        /**
+         *
+         * Test GetById
+         *
+         */
+//        City city1 = cdao.getById(new Short("494"));
+//        System.out.println(city1.getCityId() + " - " + city1.getCity() + " - " 
+//                + city1.getCountryId().getCountry() + " - " + city1.getLastUpdate());
+        /**
+         * 
+         * Test Insert
+         * 
+         */
+        City city1 = new City(new Short ("26"), "Bawen", new Country(new Short("15")), 
+                new Timestamp(new Date().getTime()));
+        System.out.println(city1.getCityId() + " - " + city1.getCity() + " - " 
+                + city1.getCountryId().getCountry() + " - " + city1.getLastUpdate());
+       
+        
+        
     }
-    
+
 }
