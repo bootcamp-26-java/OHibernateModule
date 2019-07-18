@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author KHAIRUL MUNA
+ * @author Arif Fridasari
  */
 @Entity
 @Table(name = "city")
@@ -60,6 +60,14 @@ public class City implements Serializable {
     public City(Short cityId) {
         this.cityId = cityId;
     }
+
+    public City(Short cityId, String city, Country countryId, Date lastUpdate) {
+        this.cityId = cityId;
+        this.city = city;
+        this.lastUpdate = lastUpdate;
+        this.countryId = countryId;
+    }
+    
 
     public City(Short cityId, String city, Date lastUpdate) {
         this.cityId = cityId;

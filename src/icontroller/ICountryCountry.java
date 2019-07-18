@@ -9,6 +9,6 @@ package icontroller;
  *
  * @author Arif Fridasari
  */
-public interface ICountryDAO {
+public interface ICountryCountry {
     
 }
